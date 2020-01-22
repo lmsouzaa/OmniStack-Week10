@@ -19,7 +19,7 @@ module.exports = {
         if (!dev){
 
         const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
-         //console.log(apiResponse.data); ESSA PARTE MOSTRA TODAS AS INFOS DO USUARIO DO GITHUB.
+      
         //ESSA PARTE MOSTRA A DESESTRUTURAÇÃO PARA BUSCAR APENAS OQ EU QUERO DO USUARIO:
         const {name = login, avatar_url, bio} =apiResponse.data;
         
@@ -29,7 +29,6 @@ module.exports = {
             type: 'Point',
             coordinates:[longitude,latitude],
         };
-        // as techs USUARIO Q INFORM
     
         dev = await Dev.create({
             github_username,
